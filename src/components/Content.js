@@ -11,7 +11,7 @@ import Instructions from './Instructions';
           refactor to get this Content component to work.
 */
 class Content extends Component {
-  renderContent = (note) => {
+  renderContent = () => {
     if (false) {
       return <NoteEditor />;
     } else if (true) {
@@ -25,7 +25,7 @@ class Content extends Component {
     return (
       <div className='master-detail-element detail'>
         { /*<NoteViewer note={this.props.note}/>*/}
-        {this.renderContent(this.note)}
+        {this.renderContent()}
       </div>
     );
   }
