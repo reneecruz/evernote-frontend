@@ -6,7 +6,8 @@ import Content from './Content';
 class NoteContainer extends Component {
 
   state = {
-    noteArr: []
+    noteArr: [],
+    noteItem: {}
   }
 
   componentDidMount() {
@@ -17,13 +18,20 @@ class NoteContainer extends Component {
     }))
   }
 
+  handleNoteViewer = (note) => {
+    console.log("hi from handle note!", note)
+    this.setState({
+      noteItem: note
+    })
+  }
+
   render() {
     return (
       <Fragment>
         <Search />
         <div className='container'>
-          <Sidebar notes={this.state.noteArr}/>
-          <Content />
+          <Sidebar notes={this.state.noteArr} handleNoteViewer={this.handleNoteViewer}/>
+          <Content note={this.state.noteItem}/>
         </div>
       </Fragment>
     );

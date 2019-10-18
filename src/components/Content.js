@@ -24,7 +24,8 @@ class Content extends Component {
   render() {
     return (
       <div className='master-detail-element detail'>
-        {this.renderContent()}
+        { <NoteViewer note={this.props.note}/>}
+        {/*this.renderContent()*/}
       </div>
     );
   }
